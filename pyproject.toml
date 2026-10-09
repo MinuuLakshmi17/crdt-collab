@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "crdt-collab"
+version = "0.1.0"
+description = "Educational sequence CRDT with persistence and optional WebSocket relay"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+websocket = ["websockets>=12.0"]
+[project.scripts]
+crdt-collab = "crdtcollab.cli:main"
+[tool.setuptools.packages.find]
+include = ["crdtcollab*"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
